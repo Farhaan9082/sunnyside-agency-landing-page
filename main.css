@@ -11,6 +11,7 @@
     --Dark-grayish-blue: hsl(232, 10%, 55%);
     --Grayish-blue: hsl(210, 4%, 67%);
     --White: hsl(0, 0%, 100%);
+    --footer: rgb(144, 212, 197);
 }
 
 * {
@@ -49,10 +50,14 @@ header {
     padding: 0px 20px;
 }
 
+.triangle {
+    display: none;
+}
+
 .CTA {
     outline: 0;
     border: none;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 1.0);
     font-size: 14px;
     font-family: 'Fraunces', serif;
     font-weight: 500;
@@ -60,6 +65,17 @@ header {
     height: 40px;
     padding: 0px 20px;
     border-radius: 500px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.CTA:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.CTA.underline-btn:hover {
+    color: black;
 }
 
 .container-fluid {
@@ -69,6 +85,10 @@ header {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.menu {
+    display: none;
 }
 
 .home {
@@ -87,6 +107,8 @@ header {
     letter-spacing: 8px;
     text-transform: uppercase;
     padding-top: 80px;
+    text-align: center;
+    margin: 0px 20px;
 }
 
 .arrow {
@@ -96,7 +118,7 @@ header {
 .grid-layout {
     width: 100%;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
 }
 
 .item1 {
@@ -203,7 +225,7 @@ header {
     align-items: center;
     background-color: white;
     width: 100%;
-    height: 80vh;
+    padding: 130px 0px;
 }
 
 .testimonials h1 {
@@ -258,4 +280,456 @@ header {
     color: var(--Grayish-blue);
     font-family: 'Barlow', sans-serif;
     font-size: 12px;
+}
+
+.project-block {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.milk {
+    background-image: url(images/desktop/image-gallery-milkbottles.jpg);
+    height: 450px;
+}
+
+.orange {
+    background-image: url(images/desktop/image-gallery-orange.jpg);
+    height: 450px;
+}
+
+.cone {
+    background-image: url(images/desktop/image-gallery-cone.jpg);
+    height: 450px;
+}
+
+.sugar {
+    background-image: url(images/desktop/image-gallery-sugarcubes.jpg);
+    height: 450px;
+}
+
+.footer {
+    width: 100%;
+    background-color: var(--footer);
+}
+
+.footer-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0px;
+}
+
+.footer-links {
+    width: 320px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    margin-top: 30px;
+}
+
+.footer-links a {
+    color: var(--Dark-moderate-cyan);
+    transition: all 0.2s ease-in-out;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.icons {
+    width: 180px;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 70px;
+    transition: all 0.2s ease-in-out;
+}
+
+.icons img:hover {
+    filter: brightness(0) invert(100%);
+}
+
+.logo-footer {
+    width: 150px;
+    filter: brightness(0) invert(39%) sepia(67%) saturate(323%) hue-rotate(118deg) brightness(90%) contrast(90%);
+}
+
+.attribution {
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    width: 100%;
+    display: flex;
+    background-color: var(--footer);
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.attribution a {
+    font-size: 12px;
+    color: var(--Dark-desaturated-cyan);
+    letter-spacing: normal;
+    margin-left: 5px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .heading {
+        font-size: 60px;
+    }
+
+    .arrow {
+        padding-top: 90px;
+    }
+}
+
+@media only screen and (max-width: 930px) {
+    .heading {
+        font-size: 52px;
+    }
+
+    .arrow {
+        padding-top: 100px;
+    }
+
+    .item1 h2 {
+        font-size: 36px;
+    }
+
+    .item1 p {
+        font-size: 14px;
+    }
+
+    .background-block h2 {
+        font-size: 32px;
+    }
+
+    .background-block p {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 840px) {
+    .arrow {
+        padding-top: 115px;
+    }
+
+    .nav-block {
+        display: none;
+    }
+
+    .nav-block.show {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 88%;
+        position: absolute;
+        margin-top: 300px;
+    }
+
+    .nav-link {
+        padding: 30px 0px;
+        background-color: white;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 30px;
+        justify-items: center;
+    }
+
+    .triangle {
+        display: block;
+        width: 0;
+        height: 0;
+        border-bottom: 20px solid white;
+        border-left: 20px solid transparent;
+        align-self: flex-start;
+        margin-left: auto;
+    }
+
+    .nav-link a {
+        color: var(--Dark-grayish-blue);
+    }
+
+    .CTA {
+        background-color: var(--Yellow);
+    }
+
+    .CTA:hover {
+        background-color: var(--Yellow);
+        color: black;
+    }
+
+    .menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    .project-block {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .egg {
+        content: url(images/mobile/image-transform.jpg);
+        height: 500px;
+    }
+
+    .lamp {
+        content: url(images/mobile/image-stand-out.jpg);
+    }
+
+    .milk {
+        height: 400px;
+    }
+    
+    .orange {
+        height: 400px;
+    }
+    
+    .cone {
+        height: 400px;
+    }
+    
+    .sugar {
+        height: 400px;
+    }
+
+    .grid-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .item2 {
+        order: -1;
+    }
+
+    .item1 {
+        align-items: center;
+        text-align: center;
+        padding: 60px 50px;
+    }
+
+    .item1 h2 {
+        font-size: 60px;
+    }
+
+    .item1 p {
+        font-size: 34px;
+        line-height: 42px;
+    }
+
+    .underline-btn {
+        margin-top: 50px;
+        font-size: 26px;
+    }
+
+    .button-underline {
+        width: 220px;
+        height: 14px;
+        transform: translateY(-8px);
+        margin-bottom: 20px;
+    }
+
+    .background-block {
+        margin-top: 500px;
+    }
+
+    .background-block h2 {
+        font-size: 44px;
+    }
+
+    .background-block p {
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .clients {
+        flex-direction: column;
+    }
+
+    .testimonials {
+        padding: 70px 0px 20px;
+    }
+
+    .testimonials h1 {
+        font-size: 30px;
+    }
+
+    .client img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .client h3,p {
+        font-size: 20px;
+    }
+
+    .client h3 {
+        margin-top: 0px;
+    }
+
+    .client p {
+        padding: 30px 10px;
+    }
+
+    .client h4 {
+        font-size: 16px;
+        margin-bottom: 60px;
+    }
+}
+
+@media only screen and (max-width: 714px) {
+    .arrow {
+        padding-top: 50px;
+    }
+
+    .milk {
+        height: 370px;
+    }
+    
+    .orange {
+        height: 370px;
+    }
+    
+    .cone {
+        height: 370px;
+    }
+    
+    .sugar {
+        height: 370px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .item1 h2 {
+        font-size: 40px;
+    }
+
+    .item1 p {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .underline-btn {
+        margin-top: 50px;
+        font-size: 16px;
+    }
+
+    .button-underline {
+        width: 140px;
+        height: 9px;
+        transform: translateY(-7px);
+        margin-bottom: 20px;
+    }
+
+    .background-block h2 {
+        font-size: 34px;
+    }
+
+    .background-block p {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .egg {
+        height: 400px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .clients {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
+    .testimonials h1 {
+        font-size: 20px;
+    }
+
+    .milk {
+        height: 320px;
+    }
+    
+    .orange {
+        height: 320px;
+    }
+    
+    .cone {
+        height: 320px;
+    }
+    
+    .sugar {
+        height: 320px;
+    }
+}
+
+@media only screen and (max-width: 437px) {
+    .heading {
+        font-size: 36px;
+    }
+
+    .arrow {
+        padding-top: 90px;
+    }    
+
+    .container-fluid {
+        background-image: url(images/mobile/image-header.jpg);
+        height: 550px;
+    }
+
+    .egg {
+        height: 350px;
+    }
+
+    .background-block {
+        padding: 0px 30px;
+        margin-top: 400px;
+    }
+
+    .background-block h2 {
+        font-size: 34px;
+    }
+
+    .background-block p {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .client h3 {
+        font-size: 14px;
+    }
+
+    .client p {
+        font-size: 14px;
+        padding: 30px 0px;
+    }
+
+    .client h4 {
+        font-size: 10px;
+        margin-bottom: 60px;
+    }
+
+    .testimonials h1 {
+        font-size: 16px;
+    }
+
+    .milk {
+        height: 220px;
+    }
+    
+    .orange {
+        height: 220px;
+    }
+    
+    .cone {
+        height: 220px;
+    }
+    
+    .sugar {
+        height: 220px;
+    }
+
+    .egg {
+        height: 300px;
+    }
 }
